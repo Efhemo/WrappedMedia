@@ -12,7 +12,7 @@ create table if not exists public.drivers (
   vehicle_model text,
   vehicle_year int,
   license_plate text,
-  status text not null default 'pending' check (status in ('pending','active','inactive')),
+  status text not null default 'pending' check (status in ('pending','assigned','active','inactive')),
   created_at timestamptz default now()
 );
 
@@ -44,7 +44,14 @@ create table if not exists public.campaigns (
 create table if not exists public.driver_campaigns (
   driver_id uuid references public.drivers(id) on delete cascade,
   campaign_id uuid references public.campaigns(id) on delete cascade,
+  -- pending_acceptance: assigned by admin, driver hasn't confirmed yet
+  -- active: driver uploaded wrap photo, confirmed wrap is on car
+  -- completed: campaign ended
+  acceptance_status text not null default 'pending_acceptance'
+    check (acceptance_status in ('pending_acceptance','active','completed')),
+  wrap_photo_url text,         -- uploaded by driver when accepting campaign
   assigned_at timestamptz default now(),
+  accepted_at timestamptz,
   primary key (driver_id, campaign_id)
 );
 

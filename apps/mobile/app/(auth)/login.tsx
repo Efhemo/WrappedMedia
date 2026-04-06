@@ -41,7 +41,7 @@ export default function LoginScreen() {
     if (error) {
       Alert.alert('Login failed', error.message)
     } else {
-      router.replace('/(app)')
+      router.replace('/')
     }
   }
 

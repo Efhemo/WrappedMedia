@@ -1,4 +1,4 @@
-export type DriverStatus = 'pending' | 'active' | 'inactive'
+export type DriverStatus = 'pending' | 'assigned' | 'active' | 'inactive'
 export type Platform = 'uber' | 'lyft' | 'doordash' | 'skip' | 'instacart'
 export type WrapAngle = 'front' | 'side' | 'rear'
 

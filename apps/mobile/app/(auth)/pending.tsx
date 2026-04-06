@@ -16,7 +16,7 @@ export default function PendingScreen() {
         <Text style={styles.icon}>⏳</Text>
         <Text style={styles.title}>You're on the list!</Text>
         <Text style={styles.body}>
-          Your application has been submitted. Our team will review your wrap photos and get back to you shortly.
+          Your vehicle has been submitted for review. We'll assign you to a campaign and notify you when you're ready to drive.
         </Text>
 
         <View style={styles.statusBox}>

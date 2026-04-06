@@ -51,11 +51,12 @@ Show we can build exactly what they described in the JD — from scratch.
 - [x] Save photos to Supabase Storage + `wrap_photos` table
 - [x] Smart redirect on login: active → home, pending → pending screen, no record → onboarding
 
-### Phase 4 — Driver Home + GPS Tracking (Mobile)
-- [ ] Home dashboard screen (earnings, campaign, status)
-- [ ] Active drive screen with live map
-- [ ] GPS location ping to Supabase (Realtime)
-- [ ] Start/end drive logic
+### Phase 4 — Driver Home + GPS Tracking (Mobile) ✅
+- [x] Home screen with status-aware UI (pending / assigned / active states)
+- [x] Campaign acceptance screen (upload wrap photo → activates campaign)
+- [x] Drive screen with live GPS tracking (30s pings → driver_locations table)
+- [x] Start/end drive logic with elapsed timer
+- [x] Fixed login redirect bug (routes through / for status check)
 
 ### Phase 5 — Admin Dashboard (Web)
 - [ ] Overview page (stats cards)

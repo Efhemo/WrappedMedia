@@ -34,7 +34,7 @@ export default function OnboardPhotosScreen() {
   const pickPhoto = async (angle: WrapAngle) => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync()
     if (status !== 'granted') {
-      Alert.alert('Permission needed', 'Please allow photo library access to upload wrap photos.')
+      Alert.alert('Permission needed', 'Please allow photo library access to upload vehicle photos.')
       return
     }
 
@@ -71,7 +71,7 @@ export default function OnboardPhotosScreen() {
   const onSubmit = async () => {
     const filled = slots.filter((s) => s.uri !== null)
     if (filled.length < 2) {
-      Alert.alert('Add photos', 'Please upload at least 2 wrap photos.')
+      Alert.alert('Add photos', 'Please upload at least 2 vehicle photos.')
       return
     }
 
@@ -119,7 +119,7 @@ export default function OnboardPhotosScreen() {
     <ScrollView style={styles.container} contentContainerStyle={styles.inner}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.title}>Wrap Photos</Text>
+        <Text style={styles.title}>Vehicle Photos</Text>
         <Text style={styles.subtitle}>Step 3 of 3 — Upload at least 2 photos</Text>
         <View style={styles.progressBar}>
           <View style={[styles.progressFill, { width: '100%' }]} />
@@ -127,7 +127,7 @@ export default function OnboardPhotosScreen() {
       </View>
 
       <Text style={styles.hint}>
-        Take clear photos of your wrapped vehicle. These will be reviewed by our team.
+        Take clear photos of your vehicle. Our team uses these to assess your car before assigning a wrap.
       </Text>
 
       {/* Photo slots */}
