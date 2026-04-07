@@ -58,11 +58,11 @@ Show we can build exactly what they described in the JD — from scratch.
 - [x] Start/end drive logic with elapsed timer
 - [x] Fixed login redirect bug (routes through / for status check)
 
-### Phase 5 — Admin Dashboard (Web)
-- [ ] Overview page (stats cards)
-- [ ] Live map page (driver dots, Mapbox)
-- [ ] Driver management page (table, approve/reject)
-- [ ] Campaign management page (list + create form)
+### Phase 5 — Admin Dashboard (Web) ✅
+- [x] Overview page (stat cards + recent drivers + live campaigns)
+- [x] Driver management page (table, vehicle photo links, assign campaign modal)
+- [x] Campaign management page (list + create form)
+- [x] Live map page (Mapbox dark theme + Supabase realtime driver pins)
 
 ### Phase 6 — Polish & Demo Prep
 - [ ] Seed data (fake drivers, campaigns)

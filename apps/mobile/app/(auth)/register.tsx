@@ -40,7 +40,7 @@ export default function RegisterScreen() {
 
   const onSubmit = async (data: FormData) => {
     setLoading(true);
-    const { error } = await supabase.auth.signUp({
+    const { data: signUpData, error } = await supabase.auth.signUp({
       email: data.email,
       password: data.password,
       options: {
@@ -50,12 +50,23 @@ export default function RegisterScreen() {
         },
       },
     });
-    setLoading(false);
+
     if (error) {
+      setLoading(false);
       Alert.alert("Sign up failed", error.message);
-    } else {
-      router.push("/(auth)/onboard-vehicle");
+      return;
     }
+
+    // Create driver profile with role='driver'
+    if (signUpData.user) {
+      await supabase.from("profiles").insert({
+        user_id: signUpData.user.id,
+        role: "driver",
+      });
+    }
+
+    setLoading(false);
+    router.push("/(auth)/onboard-vehicle");
   };
 
   return (

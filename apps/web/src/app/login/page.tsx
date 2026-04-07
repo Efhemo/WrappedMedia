@@ -26,16 +26,33 @@ export default function LoginPage() {
   const onSubmit = async (data: FormData) => {
     setLoading(true)
     setError(null)
-    const { error } = await supabase.auth.signInWithPassword({
+
+    const { data: authData, error: signInError } = await supabase.auth.signInWithPassword({
       email: data.email,
       password: data.password,
     })
-    setLoading(false)
-    if (error) {
-      setError(error.message)
-    } else {
-      router.replace('/dashboard')
+
+    if (signInError || !authData.user) {
+      setError(signInError?.message ?? 'Login failed')
+      setLoading(false)
+      return
     }
+
+    // Check role — only admins can access the dashboard
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('user_id', authData.user.id)
+      .single()
+
+    if (!profile || profile.role !== 'admin') {
+      await supabase.auth.signOut()
+      setError('Access denied. This dashboard is for Wrapped Media admins only.')
+      setLoading(false)
+      return
+    }
+
+    router.replace('/dashboard')
   }
 
   return (
@@ -50,7 +67,6 @@ export default function LoginPage() {
           <p className="text-slate-500 text-sm mt-1">Admin Dashboard</p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="space-y-1.5">
             <label className="text-slate-300 text-sm font-medium">Email</label>

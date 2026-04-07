@@ -97,6 +97,13 @@ create policy "Driver reads own assignments" on public.driver_campaigns
     driver_id in (select id from public.drivers where user_id = auth.uid())
   );
 
+-- Allow authenticated users to read all driver locations (for admin live map)
+create policy "Authenticated users read locations" on public.driver_locations
+  for select using (auth.role() = 'authenticated');
+
+-- Enable realtime on driver_locations (run this too)
+alter publication supabase_realtime add table public.driver_locations;
+
 -- Storage: create a bucket called 'wrap-photos' in your Supabase Storage dashboard
 -- Then add this policy to allow authenticated uploads:
 -- Bucket: wrap-photos | Policy: Allow authenticated uploads
