@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { supabaseAdmin as supabase } from '../../../lib/supabase-admin'
+import { getSupabaseAdmin } from '../../../lib/supabase-admin'
+const supabase = getSupabaseAdmin()
 
 async function getStats() {
   const [

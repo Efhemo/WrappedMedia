@@ -1,4 +1,5 @@
-import { supabaseAdmin as supabase } from '../../../lib/supabase-admin'
+import { getSupabaseAdmin } from '../../../lib/supabase-admin'
+const supabase = getSupabaseAdmin()
 import { CampaignForm } from './campaign-form'
 
 async function getCampaigns() {
