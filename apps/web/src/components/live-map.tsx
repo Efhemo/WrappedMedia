@@ -92,7 +92,7 @@ export function LiveMap() {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/dark-v11',
-      center: [-79.3832, 43.6532], // Toronto default
+      center: [-114.0719, 51.0447], // Calgary default
       zoom: 11,
     })
 

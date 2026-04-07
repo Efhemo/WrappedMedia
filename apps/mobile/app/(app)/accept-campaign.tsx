@@ -50,15 +50,14 @@ export default function AcceptCampaignScreen() {
       return
     }
 
-    setLoading(true)
+    if (!user) { router.replace('/(auth)/login'); return }
 
-    const { data: { user: authUser } } = await supabase.auth.getUser()
-    if (!authUser) { router.replace('/(auth)/login'); return }
+    setLoading(true)
 
     const { data: driver } = await supabase
       .from('drivers')
       .select('id')
-      .eq('user_id', authUser.id)
+      .eq('user_id', user.id)
       .single()
 
     if (!driver) { setLoading(false); return }
@@ -70,9 +69,10 @@ export default function AcceptCampaignScreen() {
 
     const { error: uploadError } = await supabase.storage
       .from('wrap-photos')
-      .upload(path, blob, { upsert: true, contentType: 'image/jpeg' })
+      .upload(path, blob, { contentType: 'image/jpeg' })
 
-    if (uploadError) {
+    // "already exists" is fine — we'll just use the existing file's URL
+    if (uploadError && !uploadError.message.includes('already exists')) {
       Alert.alert('Upload failed', uploadError.message)
       setLoading(false)
       return

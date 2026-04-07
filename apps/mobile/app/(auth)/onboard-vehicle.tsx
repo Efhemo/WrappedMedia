@@ -167,7 +167,7 @@ export default function OnboardVehicleScreen() {
               label: "License Plate",
               placeholder: "ABCD 123",
             },
-            { name: "city" as const, label: "City", placeholder: "Toronto" },
+            { name: "city" as const, label: "City", placeholder: "Calgary" },
           ].map(({ name, label, placeholder, keyboard }) => (
             <View key={name} style={styles.field}>
               <Text style={styles.label}>{label}</Text>
