@@ -24,7 +24,7 @@ export default async function CampaignsPage() {
   const campaigns = await getCampaigns()
 
   return (
-    <div className="p-8 space-y-6">
+    <div className="p-4 md:p-8 space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-white text-2xl font-bold">Campaigns</h1>
@@ -82,7 +82,7 @@ export default async function CampaignsPage() {
 
         {/* Create form */}
         <div className="lg:col-span-1">
-          <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 sticky top-8">
+          <div className="bg-slate-900 rounded-2xl border border-slate-800 p-5 md:sticky md:top-8">
             <h2 className="text-white font-semibold mb-4">New Campaign</h2>
             <CampaignForm />
           </div>

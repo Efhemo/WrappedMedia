@@ -12,10 +12,10 @@ This is a full-stack demo of the core product described in the Wrapped Media job
 
 The demo consists of two applications:
 
-| Application | Access |
-|-------------|--------|
+| Application               | Access                          |
+| ------------------------- | ------------------------------- |
 | **Admin Dashboard** (web) | Deployed on Vercel — link below |
-| **Driver App** (mobile) | Scan QR code below with Expo Go |
+| **Driver App** (mobile)   | Scan QR code below with Expo Go |
 
 Both apps share a live Supabase backend. Any action you take in one is instantly reflected in the other.
 
@@ -28,6 +28,7 @@ Both apps share a live Supabase backend. Any action you take in one is instantly
 > **URL:** `https://your-vercel-url.vercel.app`
 
 Login with:
+
 ```
 Email:    admin@wrappedmedia.ca
 Password: (share separately)
@@ -40,22 +41,23 @@ No installation required — works in any browser.
 ### Driver App (Mobile)
 
 **Step 1** — Install the free **Expo Go** app on your phone:
+
 - iPhone: [App Store → search "Expo Go"](https://apps.apple.com/app/expo-go/id982107779)
 - Android: [Play Store → search "Expo Go"](https://play.google.com/store/apps/details?id=host.exp.exponent)
 
 **Step 2** — Scan this QR code or open the link below:
 
-> **Link:** `exp://your-tunnel-url` *(see QR code in attached image)*
+> **Link:** `exp://your-tunnel-url` _(see QR code in attached image)_
 
 **Step 3** — Log in with any demo driver account:
 
-| Name | Email | Password | Status |
-|------|-------|----------|--------|
-| Alex Chen | alex.chen@demo.com | Demo1234! | Active — driving McDonald's campaign |
-| Maria Santos | maria.santos@demo.com | Demo1234! | Active — driving Nike campaign |
-| Jordan Lee | jordan.lee@demo.com | Demo1234! | Assigned — has a campaign waiting to accept |
-| Sam Wilson | sam.wilson@demo.com | Demo1234! | Pending — awaiting admin review |
-| Taylor Brown | taylor.brown@demo.com | Demo1234! | Pending — awaiting admin review |
+| Name         | Email                 | Password  | Status                                      |
+| ------------ | --------------------- | --------- | ------------------------------------------- |
+| Alex Chen    | alex.chen@demo.com    | Demo1234! | Active — driving McDonald's campaign        |
+| Maria Santos | maria.santos@demo.com | Demo1234! | Active — driving Nike campaign              |
+| Jordan Lee   | jordan.lee@demo.com   | Demo1234! | Assigned — has a campaign waiting to accept |
+| Sam Wilson   | sam.wilson@demo.com   | Demo1234! | Pending — awaiting admin review             |
+| Taylor Brown | taylor.brown@demo.com | Demo1234! | Pending — awaiting admin review             |
 
 ---
 
@@ -133,16 +135,16 @@ You can also register a brand new driver to test the full onboarding flow:
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Mobile | Expo / React Native / TypeScript |
-| Web | Next.js 16 / TypeScript / Tailwind CSS |
-| Backend | Supabase (Auth, Postgres, Storage) |
-| Map | Mapbox GL JS |
-| Monorepo | Turborepo + npm workspaces |
+| Layer        | Technology                                    |
+| ------------ | --------------------------------------------- |
+| Mobile       | Expo / React Native / TypeScript              |
+| Web          | Next.js 16 / TypeScript / Tailwind CSS        |
+| Backend      | Supabase (Auth, Postgres, Storage)            |
+| Map          | Mapbox GL JS                                  |
+| Monorepo     | Turborepo + npm workspaces                    |
 | Shared types | Custom TypeScript package (`@wrapped/shared`) |
-| Forms | React Hook Form + Zod |
-| State | Zustand |
+| Forms        | React Hook Form + Zod                         |
+| State        | Zustand                                       |
 
 ### Architecture notes
 
@@ -157,9 +159,10 @@ You can also register a brand new driver to test the full onboarding flow:
 > GitHub: `https://github.com/your-username/wrapped-media-demo`
 
 The `supabase/` folder contains:
+
 - `reset.sql` — full schema with all tables and RLS policies (run once to set up a fresh project)
 - `seed.sql` — demo data (the 5 drivers, 3 campaigns, and assignments above)
 
 ---
 
-*Questions? Reach out at femiadegbite@email.com*
+_Questions? Reach out at femiadegbite@email.com_
