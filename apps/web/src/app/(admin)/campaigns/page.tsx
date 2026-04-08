@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { getSupabaseAdmin } from '../../../lib/supabase-admin'
 const supabase = getSupabaseAdmin()
 import { CampaignForm } from './campaign-form'
