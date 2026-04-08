@@ -25,7 +25,7 @@ Both apps share a live Supabase backend. Any action you take in one is instantly
 
 ### Admin Dashboard (Web)
 
-> **URL:** `https://your-vercel-url.vercel.app`
+> **URL:** https://wrapped-media-web.vercel.app
 
 Login with:
 
@@ -34,7 +34,7 @@ Email:    admin@wrappedmedia.ca
 Password: (share separately)
 ```
 
-No installation required — works in any browser.
+No installation required — works in any browser, including on mobile.
 
 ---
 
@@ -45,9 +45,13 @@ No installation required — works in any browser.
 - iPhone: [App Store → search "Expo Go"](https://apps.apple.com/app/expo-go/id982107779)
 - Android: [Play Store → search "Expo Go"](https://play.google.com/store/apps/details?id=host.exp.exponent)
 
-**Step 2** — Scan this QR code or open the link below:
+**Step 2** — Scan the QR code below or open the link directly:
 
-> **Link:** `exp://your-tunnel-url` _(see QR code in attached image)_
+> **Link:** `exp://iblqxy4-anonymous-8081.exp.direct`
+
+![Expo QR Code](./qr-code.png)
+
+> **Note:** This link is live while the demo machine is running. If it stops working, reach out and I'll send a fresh QR code — it takes under a minute to regenerate.
 
 **Step 3** — Log in with any demo driver account:
 
@@ -156,7 +160,7 @@ You can also register a brand new driver to test the full onboarding flow:
 
 ## Source Code
 
-> GitHub: `https://github.com/your-username/wrapped-media-demo`
+> GitHub: https://github.com/Efhemo/WrappedMedia
 
 The `supabase/` folder contains:
 

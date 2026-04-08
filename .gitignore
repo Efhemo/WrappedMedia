@@ -4,3 +4,7 @@ node_modules
 .env.local
 .DS_Store
 *.log
+
+DEMO_doc_source.md
+DRIVER_FLOW.md
+WrappedMedia_Demo_Guide.docx
