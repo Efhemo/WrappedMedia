@@ -169,4 +169,4 @@ The `supabase/` folder contains:
 
 ---
 
-_Questions? Reach out at femiadegbite@email.com_
+_Questions? Reach out at femiadegbite001@gmail.com_
